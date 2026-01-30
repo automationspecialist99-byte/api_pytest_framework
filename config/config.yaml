@@ -1,0 +1,9 @@
+base_url: "https://restful-booker.herokuapp.com"
+timeout: 10
+booking: "/booking"
+retrieve_booking_id: 2
+update_booking_id: 2
+delete_booking_id: 2
+auth: "/auth"
+success_status_code: 200
+created_status_code: 201

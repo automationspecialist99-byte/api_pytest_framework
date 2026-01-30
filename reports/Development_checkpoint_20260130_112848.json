@@ -1,0 +1,28 @@
+{
+  "specs": {},
+  "functional_spec_count": {},
+  "testsuites": [
+    {
+      "cases": [
+        {
+          "classname": "tests.test_01_create_booking",
+          "name": "test_create_booking",
+          "developer": "-",
+          "test_description": "",
+          "status": "Failed",
+          "logs": "<ul style='list-style-type: none; padding: 0;'></ul>",
+          "details": "Message: AssertionError:  firstname  not found in the reqsponse json\nDetails: api_client = <utils.api_client.APIClient object at 0x00000239E9CDEBA0>\nconfig = {'auth': '/auth', 'base_url': 'https://restful-booker.herokuapp.com', 'booking': '/booking', 'created_status_code': 201, ...}\n\n    def test_create_booking(api_client, config):\n        response= api_client.post(endpoint=config[\"booking\"],payload=json_data_read(\"test_data.json\"),headers=json_data_read(\"test_headers.json\"))\n        assert_status_code(response, config[\"success_status_code\"])\n        assert_key_exists(response.json(),\"booking\")\n        print(response.json())\n>       assert_validate_response_data(response)\n\ntests\\test_01_create_booking.py:10: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [200]>\n\n    def assert_validate_response_data(response):\n        data=response.json()\n        assert \"bookingid\" in data,f\" bookingid  not found in the reqsponse json\"\n        assert \"booking\" in data, f\" booking  not found in the reqsponse json\"\n>       assert \"firstname\" in data, f\" firstname  not found in the reqsponse json\"\n               ^^^^^^^^^^^^^^^^^^^\nE       AssertionError:  firstname  not found in the reqsponse json\n\nutils\\assertions.py:12: AssertionError",
+          "functional_specifications": [],
+          "categories": []
+        }
+      ]
+    }
+  ],
+  "test_environment": "Development",
+  "timestamp": "30 Jan 2026, 11:28",
+  "img_url": "https://icon.icepanel.io/Technology/svg/pytest.svg",
+  "test_status": "complete",
+  "report_title": "pytest HTML Report",
+  "category_count": {},
+  "all_categories": []
+}
