@@ -24,17 +24,9 @@ def test_create_booking(api_client, config):
     ]
 )
 def test_create_booking_parametrize(api_client, config,firstname, price):
-    payload={
-    "firstname" : firstname,
-    "lastname" : "Brown",
-    "totalprice" : price,
-    "depositpaid" : True,
-    "bookingdates" : {
-        "checkin" : "2018-01-01",
-        "checkout" : "2019-01-01"
-    },
-    "additionalneeds" : "Breakfast"
-}
+    payload = json_data_read("test_data.json")
+    payload['firstname'] = f'{firstname}'
+    payload['totalprice'] = price
     response= api_client.post(endpoint=config["booking"],payload=payload,headers=json_data_read("test_headers.json"))
     assert_status_code(response, config["success_status_code"])
     assert_key_exists(response.json(),"booking")
