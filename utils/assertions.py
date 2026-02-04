@@ -9,4 +9,3 @@ def assert_validate_response_data(response):
     data=response.json()
     assert "bookingid" in data,f" bookingid  not found in the reqsponse json"
     assert "booking" in data, f" booking  not found in the reqsponse json"
-    #assert data["bookingid"] == "always changing "
