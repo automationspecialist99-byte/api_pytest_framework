@@ -7,3 +7,4 @@ delete_booking_id: 2
 auth: "/auth"
 success_status_code: 200
 created_status_code: 201
+invalid_id: 99999999
