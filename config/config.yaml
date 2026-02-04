@@ -8,3 +8,6 @@ auth: "/auth"
 success_status_code: 200
 created_status_code: 201
 invalid_id: 99999999
+invalid_status_code: 405
+retrieve_booking_non_existing_id: $999999999@@@!!
+error_status_code: 404
